@@ -1,2 +1,4 @@
+.phpcs-cache
 composer.lock
 vendor/
+bin/

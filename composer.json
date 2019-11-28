@@ -1,5 +1,7 @@
 {
   "name": "idiosyncratic/devtools",
+  "description": "Composer plugin to install and configure development tools",
+  "type": "composer-plugin",
   "license": "ISC",
   "authors": [
     {
@@ -7,9 +9,15 @@
       "email": "jason@jasonsilkey.com"
     }
   ],
+  "autoload": {
+    "psr-4": {
+      "Idiosyncratic\\DevTools\\": "src"
+    }
+  },
   "require": {
     "php": ">=7.3",
     "behat/behat": "^3.5",
+    "composer-plugin-api": "^1.0",
     "idiosyncratic/coding-standard": "^1.0",
     "jakub-onderka/php-console-highlighter": "^0.4.0",
     "jakub-onderka/php-parallel-lint": "^1.0",
@@ -27,5 +35,8 @@
     "optimize-autoloader": true,
     "discard-changes": true,
     "bin-dir" : "bin"
+  },
+  "extra": {
+    "class": "Idiosyncratic\\DevTools\\ComposerPlugin"
   }
 }
