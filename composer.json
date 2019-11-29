@@ -19,13 +19,16 @@
     "behat/behat": "^3.5",
     "composer-plugin-api": "^1.0",
     "idiosyncratic/coding-standard": "^1.0",
-    "jakub-onderka/php-console-highlighter": "^0.4.0",
+    "jakub-onderka/php-console-highlighter": "^0.4",
     "jakub-onderka/php-parallel-lint": "^1.0",
     "phploc/phploc": "^5.0",
     "phpspec/phpspec": "^6.0",
     "phpstan/phpstan": "^0.11",
     "phpunit/phpunit": "^8.4",
     "sebastian/phpcpd": "^4.1"
+  },
+  "require-dev": {
+    "composer/composer": "*"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,

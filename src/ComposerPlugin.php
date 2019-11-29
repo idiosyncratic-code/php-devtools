@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace idiosyncratic\DevTools;
+namespace Idiosyncratic\DevTools;
 
 use Composer\Composer;
 use Composer\EventDispatcher\EventSubscriberInterface;
@@ -42,7 +42,13 @@ final class ComposerPlugin implements PluginInterface, EventSubscriberInterface
     {
         $projectRoot = getcwd();
 
-        $configFiles = new DirectoryIterator(sprintf('%s/files', dirname(dirname(__FILE__))));
+        $configFilesDir = sprintf('%s/files', dirname(dirname(__FILE__)));
+
+        if (file_exists($configFilesDir) === false || is_dir($configFilesDir) === false) {
+            return;
+        }
+
+        $configFiles = new DirectoryIterator($configFilesDir);
 
         $composerEvent->getIO()->write(
             '<info>idiosyncratic/devtools:</info> Setting up devtools'
